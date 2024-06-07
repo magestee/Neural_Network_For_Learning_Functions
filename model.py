@@ -35,5 +35,12 @@ def feedforward(inputs):
 
     return o
 
+def mse(y, y_hat):
+    errors = y - y_hat
+    squared_error = np.square(errors)
+    mse = np.mean(squared_error)
+    return mse
+
 output = feedforward(inputs)
-print(output)
+
+print(mse(output, outputs))
