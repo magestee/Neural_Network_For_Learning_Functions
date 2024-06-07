@@ -5,6 +5,6 @@ def generate_training_data(rows):
     with open('training_set.csv', 'w', newline='') as csvfile:
         writer = csv.writer(csvfile)
         writer.writerow(['input', 'output'])
-        writer.writerow(data)
+        writer.writerows(data)
 
 generate_training_data(100)
