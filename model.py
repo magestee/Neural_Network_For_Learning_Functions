@@ -15,8 +15,13 @@ bias_h1 = np.zeros(10)
 bias_h2 = np.zeros(10)
 bias_o = np.zeros(1)
 
-def leaky_relu(a, alpha = 0.1):
-    if a > 0:
-        return a
-    else:
-        return alpha * a
+# Takes the array x and dots it to the weights matrix and adds it to be.
+def weighted_sum(x, w, b):
+    return np.dot(x, w) + b
+
+# This function passes through all of the weighted sums and calculates out put for each layer
+def leaky_relu(a, alpha = 0.01):
+    return np.where(a > 0, a, alpha * a)
+
+# 
+
